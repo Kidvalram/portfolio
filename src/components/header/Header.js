@@ -51,30 +51,29 @@ export default function Header({onClickLanguage, onClickMenu, language, open}) {
   return (
     <motion.div className='header_navigation_bar'>
       <div className='header_navigation_container'>
-        <div className="header_section">
+        <div className="flex justify-center items-center space-x-8 w-auto">
+          <NavLink to="/" className={"header_link"}>
             <img src={logo} className="header_logo" alt="Flowbite Logo" />
-            <div className='flex gap-6'>
-              <div className='relative'>
-                <NavLink to="/" className={"header_link"}>
-                  <motion.div animate={active_portfolio !== null ? {opacity: 1} : {opacity: 0.6}} transition={{duration: .8}}>
-                    <AnimatePresence exitBeforeEnter>
-                      {lang.map((iLang) => {
-                        return (
-                          language === iLang && 
-                          <motion.div key={language + "portfolio_link"} variants={variants} initial="initial"
-                            animate="animate" exit="exit" transition={{delay: .2, duration: .4}}>
-                            {data.portfolio[language]}
-                          </motion.div>
-                        )
-                      })}
-                    </AnimatePresence>
-                  </motion.div>
-                </NavLink>
-                { active_portfolio !== null ? ( <motion.div className={"header_link_underline"} layoutId="underline"/>) : <></>} 
-              </div>
-              <div className='relative'>
+          </NavLink>
+            <div className='flex flex-row items-center justify-start space-x-8 w-[50vw]'>
+              <NavLink to="/" className={"header_link"}>
+                    <motion.div className='inline-block' animate={active_portfolio !== null ? {opacity: 1} : {opacity: 0.6}} transition={{duration: .8}}>
+                      <AnimatePresence exitBeforeEnter>
+                        {lang.map((iLang) => {
+                          return (
+                            language === iLang && 
+                            <motion.div key={language + "portfolio_link"} variants={variants} initial="initial"
+                              animate="animate" exit="exit" transition={{delay: .2, duration: .4}}>
+                              {data.portfolio[language]}
+                            </motion.div>
+                          )
+                        })}
+                      </AnimatePresence>
+                    </motion.div>
+                    { active_portfolio !== null ? ( <motion.div className={"header_link_underline"} layoutId="underline"/>) : <></>} 
+              </NavLink>
               <NavLink to="/about" className={"header_link"}>
-                <motion.div animate={active_about !== null ? {opacity: 1} : {opacity: 0.6}} transition={{duration: .8}}>
+                <motion.div className='inline-block' animate={active_about !== null ? {opacity: 1} : {opacity: 0.6}} transition={{duration: .8}}>
                   <AnimatePresence exitBeforeEnter>
                       {lang.map((iLang) => {
                         return (
@@ -87,63 +86,68 @@ export default function Header({onClickLanguage, onClickMenu, language, open}) {
                       })}
                     </AnimatePresence>
                 </motion.div>
+                { active_about !== null ? ( <motion.div className={"header_link_underline"} layoutId="underline"/>) : <></>} 
               </NavLink>
-              { active_about !== null ? ( <motion.div className={"header_link_underline"} layoutId="underline"/>) : <></>} 
-              </div>
-              <div className='relative'>
-                <NavLink to="/contact" className={"header_link"}>
-                  <motion.div animate={active_contact !== null ? {opacity: 1} : {opacity: 0.6}} transition={{duration: .8}}>
-                    <AnimatePresence exitBeforeEnter>
-                      {lang.map((iLang) => {
-                        return (
-                          language === iLang && 
-                          <motion.div key={language + "about_link"} variants={variants} initial="initial"
-                          animate="animate" exit="exit" transition={{delay: .2, duration: .4}}>
-                            {data.contact[language]}
-                          </motion.div>
-                        )
-                      })}
-                    </AnimatePresence>
-                  </motion.div>
-                </NavLink>
+              <NavLink to="/contact" className={"header_link"}>
+                <motion.div className='inline-block' animate={active_contact !== null ? {opacity: 1} : {opacity: 0.6}} transition={{duration: .8}}>
+                  <AnimatePresence exitBeforeEnter>
+                    {lang.map((iLang) => {
+                      return (
+                        language === iLang && 
+                        <motion.div key={language + "about_link"} variants={variants} initial="initial"
+                        animate="animate" exit="exit" transition={{delay: .2, duration: .4}}>
+                          {data.contact[language]}
+                        </motion.div>
+                      )
+                    })}
+                  </AnimatePresence>
+                </motion.div>
                 { active_contact !== null ? ( <motion.div className={"header_link_underline"} layoutId="underline"/>) : <></>} 
-              </div>
+              </NavLink>
             </div>
         </div>
         <div className='header_section'>
-          <div className='header_icons'>
+          <div className='flex items-center flex-wrap justify-between space-x-4'>
             <button>
-              <div className='shadow-sm shadow-black flex justify-center items-center lg:pr-[2vh] md:pr-[2vw]'>
-                <motion.img src={french_icon} animate={{opacity: language === "fr" ? 1 : 0}} 
-                transition={{duration:.5}} alt="French Icon" onClick={onClickLanguage}
-                className="md:w-[4vw] lg:h-[4vh] lg:w-auto absolute "/>
-                <motion.img src={english_icon} animate={{opacity: language === "en" ? 1 : 0}} 
-                transition={{duration:.5}} alt="English Icon"  onClick={onClickLanguage}
-                className="md:w-[4vw] lg:h-[4vh] lg:w-auto absolute "/>
-                <motion.img src={spanish_icon} animate={{opacity: language === "es" ? 1 : 0}} 
-                transition={{duration:.5}} alt="Spanish Icon"  onClick={onClickLanguage} 
-                className="md:w-[4vw] lg:h-[4vh] lg:w-auto absolute "/>
-              </div>
+              <AnimatePresence exitBeforeEnter>
+                {
+                  lang.map (data => {
+                    return(
+                      language === data &&
+                      <motion.div className='shadow-sm shadow-black flex justify-center items-center'
+                      initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} key={language + "icon_sm"}
+                      transition={{duration:.5}} alt="French Icon" onClick={onClickLanguage}>
+                        <motion.img src={(data === "fr" && french_icon) || (data === "es" && spanish_icon) || (data === "en" && english_icon)}  
+                        className="md:w-[4vw] lg:h-[4vh] lg:w-[4vh] relative"/>
+                      </motion.div>
+                    )
+                  })
+                }
+              </AnimatePresence>
             </button>
             <button>
-              <img src={linkedin_icon} className="header_icon" alt="Linked in icon" />
+              <img src={linkedin_icon} className="relative w-[11vw] h-auto md:w-[4vw] lg:h-[4vh] lg:w-[4vh] " alt="Linked in icon" />
             </button>
           </div>
         </div>
       </div>
       <div className='md:hidden relative flex justify-end items-center h-[10vh] w-full gap-[3vw] pr-[2vw]'>
         <button>
-          <div className='w-[10vw] h-[10vw] relative shadow-sm shadow-black rounded-[50%]'>
-            <motion.img src={french_icon_sm} animate={{opacity: language === "fr" ? 1 : 0}} 
-            transition={{duration:.5}} alt="French Icon" onClick={onClickLanguage}
-            className="w-[10vw] h-[10vw] object-cover absolute"/>
-            <motion.img src={english_icon_sm} animate={{opacity: language === "en" ? 1 : 0}} 
-            transition={{duration:.5}} alt="English Icon"  onClick={onClickLanguage}
-            className="w-[10vw] h-[10vw] object-cover absolute"/>
-            <motion.img src={spanish_icon_sm} animate={{opacity: language === "es" ? 1 : 0}} 
-            transition={{duration:.5}} alt="Spanish Icon"  onClick={onClickLanguage} 
-            className="w-[10vw] h-[10vw] object-cover absolute"/>
-          </div>
+              <AnimatePresence exitBeforeEnter>
+              {
+                lang.map (data => {
+                  return(
+                    language === data &&
+                    <motion.div className='w-[10vw] h-[10vw] relative shadow-sm shadow-black rounded-[50%]'
+                    initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} key={language + "icon_sm"}
+                    transition={{duration:.5}} alt="French Icon" onClick={onClickLanguage}>
+                      <motion.img src={(data === "fr" && french_icon_sm )|| (data === "es" && spanish_icon_sm )|| (data === "en" && english_icon_sm)}  
+                      className="w-[10vw] h-[10vw] object-cover relative"/>
+                    </motion.div>
+                  )
+                })
+              }
+              </AnimatePresence>
         </button>
         <button type="button" className='w-[10vw] h-[10vw] shadow-sm shadow-black rounded-[50%] flex justify-center items-center bg-marigold active:bg-marigold_pressed focus:bg-marigold_pressed' onClick={onClickMenu}>
           <motion.img src={menu_icon} animate={{opacity: open ? 0 : 1}} transition={{duration: 0.5}}

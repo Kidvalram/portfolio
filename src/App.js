@@ -1,6 +1,5 @@
 import { BrowserRouter as Router} from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useMediaQuery } from 'react-responsive'
 
 import Header from "components/header/Header";
 import AnimatedRoutes from "components/AnimatedRoutes";

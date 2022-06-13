@@ -1,8 +1,7 @@
 @tailwind components;
-
 @layer components {
     .header_link {
-      @apply font-playfair text-oxford_blue md:text-ivory;
+      @apply relative font-playfair text-oxford_blue md:text-ivory ;
     }
 
     .header_link_underline{
@@ -18,7 +17,7 @@
     }
 
     .header_section {
-        @apply flex items-center flex-wrap justify-between gap-12;
+        @apply flex flex-col;
     }
 
     .header_logo {

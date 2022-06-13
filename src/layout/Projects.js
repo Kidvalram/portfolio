@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, forwardRef, useImperativeHandle} from 'react'
+import React, {useState, forwardRef, useImperativeHandle} from 'react'
 
 import { ParallaxBanner, Parallax } from 'react-scroll-parallax';
 import { Carousel } from 'react-responsive-carousel';
@@ -92,7 +92,7 @@ const Projects = forwardRef((props, ref) => {
                 
                 <div className='absolute bottom-0 w-full h-[90vh]'>
                     <div className='absolute inline-block right-0 top-[45vh] mt-[-6.5vh] mr-[-6.5vh]'>
-                        <img src={logo_round_deco_lg} className="relative w-full h-[13vh] object-cover" alt="Background"/>
+                        <img src={logo_round_deco_lg} className="relative w-auto h-[13vh] object-cover" alt="Background"/>
                     </div>
                 </div>
             </div>

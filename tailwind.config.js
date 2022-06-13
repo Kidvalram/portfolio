@@ -1,9 +1,13 @@
 module.exports = {
+  
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  
   theme: {
+    
     extend: {
+      
       colors: {
         oxford_blue: "#14213D",
         ivory: "#FEFFEE",
@@ -13,11 +17,13 @@ module.exports = {
         marigold_pressed: "#D89725 !important",
         drop: "rgba(138,136,137,0.72)",
       },
+      
       fontFamily: {
         'roboto': ["Roboto", "sans-serif"],
         'playfair': ["Playfair", "sans-serif"],
         'trirong': ["Trirong", "sans-serif"],
       },
+      
       boxShadow: {
         'right': '5px 0 5px -5px rgba(138,136,137,0.72)',
         'left' : '-5px 0 5px -5px rgba(138,136,137,0.72)',
@@ -27,34 +33,15 @@ module.exports = {
         'inner-container' : 'rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px 1px 1px 1px inset',
         'inner-bottom': 'rgb(204, 219, 232) 0px -12px 8px -10px inset'
       }
+      
     },
+    
     screens: {
-      // 'sm': '440px',
-      // // => @media (min-width: 440px) { ... }
-
-      // 'md': '547px',
-      // // => @media (min-width: 547px) { ... }
-
-      // 'lg': '768px',
-      // // => @media (min-width: 768px) { ... }
-
-      // 'xl': '1024px',
-      // // => @media (min-width: 1024px) { ... }
-
       sm: '640px',
-      //@media (min-width: 640px) { /* ... */ }
-
       md: '768px',
-      //@media (min-width: 768px) { /* ... */ }
-
       lg: '1024px',
-      //@media (min-width: 1024px) { /* ... */ }
-
       xl: '1280px',
-      //@media (min-width: 1280px) { /* ... */ }
-
       '2xl': '1680px',
-      // => @media (min-width: 1680px) { ... }
       },
       fontSize: {
         'xs': '.75rem',
@@ -70,5 +57,5 @@ module.exports = {
         '6xl': '4rem',
         '7xl': '5rem',
       }
-  },
+    },
 }

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Div100vh from 'react-div-100vh'
 import {AboutData} from 'shared/AboutData.js'
-import { useMediaQuery } from 'react-responsive'
 
 //Assets
 //Decoration screen lg
@@ -54,8 +53,6 @@ import about_decoration_top_right_sm from 'assets/images/about_decoration_top_ri
 import about_decoration_top_left_sm from 'assets/images/about_decoration_top_left_sm.png'
 import about_decoration_middle_left_sm from 'assets/images/about_decoration_middle_left_sm.png'
 import about_decoration_bottom_left_sm from 'assets/images/about_decoration_bottom_left_sm.png'
-import about_decoration_bottom_right_sm from 'assets/images/about_decoration_bottom_right_sm.png'
-
 
 const variants = {
   initial: { opacity: 0 },
@@ -116,10 +113,6 @@ function About({language}) {
         setDisabled(false);
     }, 1000)
 }
-
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
-
-  const isDesktopOrLaptop = useMediaQuery({ minWidth: 1224 })
 
   return (
     <Div100vh>

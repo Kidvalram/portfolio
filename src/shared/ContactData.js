@@ -5,14 +5,14 @@ export const ContactData = {
         en: "Contact me"
     },
     description: {
-        fr: <>{"Avez-vous des questions pour moi ?"}<br/>{"Je répondrai avec plaisir à chaque question"}</>,
+        fr: <>{"Avez-vous des questions pour moi ?"}<br/>{"Je reste à votre disposition pour vous répondre, toujours avec plaisir !"}</>,
         es: <>{"¿Tienes alguna pregunta para mi?"}<br/>{"Con gusto podre responderlas"}</>,
         en: <>{"Do you have some question to me?"}<br/>{"I'll be happy to answer them"}</>,
     },
-    email:{
-        fr: "E-mail",
-        es: "Correo Electrónico",
-        en: "Email",
+    subject:{
+        fr: "Objet",
+        es: "Asunto",
+        en: "Subject",
     },
     message: {
         fr: "Message",

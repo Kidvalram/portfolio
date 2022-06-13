@@ -34,6 +34,22 @@ export default function CV({language, setTransition, onClickLanguage}) {
         slidesToScroll: 1
     };
 
+    const LevelCircles = (level) => {
+
+        let content = []
+
+        for (let index = 0; index < 5; index++) {
+            if(index < level) content.push(<div className='h-full w-full rounded-full bg-marigold'/>)
+            else content.push(<div className='h-full w-full rounded-full bg-ivory'/>)
+        }
+
+        return(
+            content.map(data => 
+                <div className='relative md:w-[1.5vw] md:h-[1.5vw] lg:w-[1vw] lg:h-[1vw] xl:w-[1.2vw] xl:h-[1.2vw] 2xl:w-[1vw] 2xl:h-[1vw]'>{data}</div>
+            )
+        )
+    }
+
     return (
     <Div100vh>
         <div className='absolute bg-oxford_blue w-[120vw] h-full'/>
@@ -58,7 +74,7 @@ export default function CV({language, setTransition, onClickLanguage}) {
                             lang.map((data) => {
                                 return (
                                     language === data &&
-                                    <motion.span className='lg:text-2xl 2xl:text-3xl text-grullo font-trirong'
+                                    <motion.span className='lg:text-xl 2xl:text-2xl text-grullo font-trirong'
                                     variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                     transition={{duration: .8}}>{CVData.formation.title[language]}</motion.span>
                                     
@@ -74,7 +90,7 @@ export default function CV({language, setTransition, onClickLanguage}) {
                                         {
                                             CVData.formation.diplomas.map((data, index) => {
                                                 return(
-                                                    <motion.div className='flex flex-row justify-between text-ivory items-start font-roboto lg:text-lg 2xl:text-lg w-full pt-[1vh]' key={index}
+                                                    <motion.div className='flex flex-row justify-between text-ivory items-start font-roboto lg:text-md 2xl:text-lg w-full pt-[1vh]' key={index}
                                                     >
                                                         <div className='flex flex-col text-left w-[80%]'>
                                                             <div className='font-playfair 2xl:text-xl'>{data.title[language]}</div>
@@ -96,14 +112,14 @@ export default function CV({language, setTransition, onClickLanguage}) {
 
                 {/* Middle Section */}
                 <div className='flex flex-col justify-between items-center h-full w-[30%] '>
-                    <img src={cv_profile} className="lg:w-[60%] 2xl:w-[65%] h-auto object-cover"/>
+                    <img src={cv_profile} alt={cv_profile} className="lg:w-[60%] 2xl:w-[65%] h-auto object-cover"/>
                     <div className='flex flex-col justify-center items-center w-full gap-[1vh]'>
                         <AnimatePresence exitBeforeEnter>
                             {
                                 lang.map((data) => {
                                     return ( 
                                         language === data &&
-                                        <motion.span className='font-trirong lg:text-2xl 2xl:text-2xl text-grullo'
+                                        <motion.span className='font-trirong lg:text-xl 2xl:text-2xl text-grullo'
                                         variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "diplomas"}
                                         transition={{duration: .8}}>
                                             {CVData.tools.title[language]}
@@ -138,7 +154,7 @@ export default function CV({language, setTransition, onClickLanguage}) {
                                 lang.map((data) => {
                                     return ( 
                                         language === data &&
-                                        <motion.span className='lg:text-2xl 2xl:text-3xl text-grullo font-trirong'
+                                        <motion.span className='lg:text-xl 2xl:text-2xl text-grullo font-trirong'
                                         variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                         transition={{duration: .8}}>{CVData.langues.title[language]}</motion.span>
                                     )
@@ -153,13 +169,15 @@ export default function CV({language, setTransition, onClickLanguage}) {
                                             {
                                                 CVData.langues.langues.map((data, index) => {
                                                     return(
-                                                        <motion.div className='flex flex-row justify-between text-ivory items-start font-playfair lg:text-lg w-full lg:pt-[.6vh] xl:pt-[.8vh] 2xl:pt-[1vh]' key={index}>
+                                                        <motion.div className='flex flex-row justify-between text-ivory items-start font-playfair lg:text-md xl:text-lg w-full lg:pt-[.6vh] xl:pt-[.8vh] 2xl:pt-[1vh]' key={index}>
                                                             
                                                             <div className='flex flex-col text-left'>
                                                             {data.title[language]}
                                                                 
                                                             </div>
-                                                            <span>{data.level}</span>
+                                                            <div className="flex flex-row justify-center items-center h-full gap-1">
+                                                                {LevelCircles(data.level)}
+                                                            </div> 
                                                         </motion.div>
                                                     )
                                                 })  
@@ -180,7 +198,7 @@ export default function CV({language, setTransition, onClickLanguage}) {
                                 lang.map((data) => {
                                     return(
                                         language === data &&
-                                        <motion.span className='lg:text-2xl 2xl:text-3xl text-grullo font-trirong'
+                                        <motion.span className='lg:text-xl 2xl:text-2xl text-grullo font-trirong'
                                         variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                         transition={{duration: .8}}>
                                             {CVData.languages.title[language]}
@@ -201,11 +219,13 @@ export default function CV({language, setTransition, onClickLanguage}) {
                                             {
                                                 CVData.languages.languages.map((data, index) => {
                                                     return(
-                                                        <div className='flex flex-row justify-between text-ivory items-start font-playfair lg:text-lg w-full lg:pt-[.6vh] xl:pt-[.8vh] 2xl:pt-[1vh]' key={index}>
+                                                        <div className='flex flex-row justify-between text-ivory items-start font-playfair lg:text-md xl:text-lg w-full lg:pt-[.6vh] xl:pt-[.8vh] 2xl:pt-[1vh]' key={index}>
                                                             <div className='flex flex-col text-left'>
                                                                 <div>{data.title}</div>
                                                             </div>
-                                                            <span>{data.level}</span>
+                                                            <div className="flex flex-row justify-center items-center h-full gap-1">
+                                                                {LevelCircles(data.level)}
+                                                            </div> 
                                                         </div>
                                                     )
                                                 }) 
@@ -224,8 +244,8 @@ export default function CV({language, setTransition, onClickLanguage}) {
                             {
                                 lang.map((data) => {
                                     return(
-                                        language == data &&
-                                        <motion.span className='lg:text-2xl 2xl:text-3xl text-grullo font-trirong'
+                                        language === data &&
+                                        <motion.span className='lg:text-xl 2xl:text-2xl text-grullo font-trirong'
                                         variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                         transition={{duration: .6, delay: .2}}>{CVData.download.title[language]}
                                         </motion.span>
@@ -245,7 +265,7 @@ export default function CV({language, setTransition, onClickLanguage}) {
             {/* Container md */}
             <div className='relative flex-col justify-evenly items-center w-[95%] h-[95%] flex lg:hidden'>
                 
-                <img src={cv_profile} className="h-[23%] w-auto object-cover"/>
+                <img src={cv_profile} alt={cv_profile} className="h-[23%] w-auto object-cover"/>
 
                 {/* Middle Section */}
                 <div className='flex flex-row w-full h-auto justify-around'>
@@ -323,7 +343,9 @@ export default function CV({language, setTransition, onClickLanguage}) {
                                                                 {data.title[language]}
                                                                     
                                                                 </div>
-                                                                <span>{data.level}</span>
+                                                                <div className="flex flex-row justify-center items-center h-full gap-2">
+                                                                    {LevelCircles(data.level)}
+                                                                </div> 
                                                             </motion.div>
                                                         )
                                                     })  
@@ -370,7 +392,9 @@ export default function CV({language, setTransition, onClickLanguage}) {
                                                                 <div className='flex flex-col text-left'>
                                                                     <div>{data.title}</div>
                                                                 </div>
-                                                                <span>{data.level}</span>
+                                                                <div className="flex flex-row justify-center items-center h-full gap-2">
+                                                                    {LevelCircles(data.level)}
+                                                                </div> 
                                                             </div>
                                                         )
                                                     }) 
@@ -391,7 +415,7 @@ export default function CV({language, setTransition, onClickLanguage}) {
                                 {
                                     lang.map((data) => {
                                         return(
-                                            language == data &&
+                                            language === data &&
                                             <motion.span className='text-xl text-grullo font-trirong'
                                             variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                             transition={{duration: .6, delay: .2}}>{CVData.download.title[language]}

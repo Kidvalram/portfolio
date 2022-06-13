@@ -108,7 +108,7 @@ export const CVData = {
             },
             {
                 title: {
-                    fr: 'Bachelor of Science Ingénierie Électronique',
+                    fr: 'Ingénieur Électronique',
                     es: 'Licenciatura en ingenieria electronica',
                     en: 'Bachelor of Science Ingénierie Électronique'
                 },

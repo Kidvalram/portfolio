@@ -1,7 +1,5 @@
 import React from "react"
 import { motion } from "framer-motion";
-import Div100vh from "react-div-100vh";
-
 
 const TransAnimation = {
     hidden: {x: "120vw"},

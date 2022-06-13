@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import React, { useState } from 'react'
+import React from 'react'
 import Div100vh from 'react-div-100vh'
 import {PortfolioData} from 'shared/PortfolioData.js';
 import {OpacityVariant} from 'shared/AnimationData.js';
@@ -26,7 +26,6 @@ import project_decoration_bottom_left_lg from 'assets/images/project_decoration_
 export default function Coinrek({setTransition, language, onClickLanguage}) {
 
     const lang = ["fr", "es", "en"];
-    const [play, setPlay] = useState(false)
 
     return (
     <Div100vh>
@@ -53,7 +52,7 @@ export default function Coinrek({setTransition, language, onClickLanguage}) {
 
             </div>
 
-            <div className='relative flex flex-col items-center justify-evenly h-[75vh] md:h-[68vh] lg:h-full lg:w-[75vw] 2xl:w-[70vw]'>
+            <div className='relative flex flex-col items-center justify-evenly h-[70vh] md:h-[68vh] lg:h-full lg:w-[75vw] 2xl:w-[70vw]'>
 
                 <div className='absolute w-full h-full'>
                     <img src={project_decoration_top_left_lg} className='absolute lg:top-0 left-0 top-0 w-[10vw] md:w-[8vw] md:top-[-1vw] lg:w-[4.5vw] xl:w-[4vw] 2xl:w-[4vw] h-auto ' alt='About decoration'/>
@@ -70,7 +69,7 @@ export default function Coinrek({setTransition, language, onClickLanguage}) {
                         {
                             lang.map((data) => {
                                 return(
-                                    language == data &&
+                                    language === data &&
                                     <motion.div className='flex justify-start items-start text-left md:justify-center md:text-center md:items-center pt-[2vh] w-full md:pt-0 md:w-[35%] lg:w-[40%]'
                                     variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                     transition={{duration: .8}}>
@@ -89,7 +88,7 @@ export default function Coinrek({setTransition, language, onClickLanguage}) {
                             {
                                 lang.map((data) => {
                                     return(
-                                        language == data &&
+                                        language === data &&
                                         <motion.span className='text-rich_black text-sm md:text-xl lg:text-lg xl:text-lg 2xl:text-lg'
                                         variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                         transition={{duration: .6, delay: .2}}>{PortfolioData.category.projects[1].description[language]}
@@ -108,7 +107,7 @@ export default function Coinrek({setTransition, language, onClickLanguage}) {
                         <motion.div className='relative justify-center items-center w-[75%] h-[35%] md:w-[70%] md:h-[40%] lg:h-[48%] lg:w-[60%]  2xl:w-[60%] flex shadow-lg shadow-black' 
                         layout variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "en"}
                         transition={{duration: .8}}>
-                            <ReactPlayer width={"100%"} height={"100%"} url="https://www.youtube.com/watch?v=v9okPA4q2GY" controls={true}  playing={play}/>
+                            <ReactPlayer width={"100%"} height={"100%"} url="https://www.youtube.com/watch?v=v9okPA4q2GY" controls={true}/>
                         </motion.div>
                     }
                     {
@@ -116,7 +115,7 @@ export default function Coinrek({setTransition, language, onClickLanguage}) {
                         <motion.div className='relative justify-center items-center w-[75%] h-[35%] md:w-[70%] md:h-[40%] lg:h-[48%] lg:w-[60%] 2xl:w-[60%] flex shadow-lg shadow-black' 
                         layout variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "es"}
                         transition={{duration: .8}}>
-                            <ReactPlayer width={"100%"} height={"100%"} url="https://www.youtube.com/watch?v=ltX9X0qdTX0" controls={true}  playing={play}/>
+                            <ReactPlayer width={"100%"} height={"100%"} url="https://www.youtube.com/watch?v=ltX9X0qdTX0" controls={true}/>
                         </motion.div>
                     }
                     {
@@ -124,7 +123,7 @@ export default function Coinrek({setTransition, language, onClickLanguage}) {
                         <motion.div className='relative justify-center items-center w-[75%] h-[35%] md:w-[70%] md:h-[40%] lg:h-[48%] lg:w-[60%]  2xl:w-[60%] flex shadow-lg shadow-black' 
                         layout variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "fr"}
                         transition={{duration: .8}}>
-                            <ReactPlayer width={"100%"} height={"100%"} url="https://www.youtube.com/watch?v=8NVjTKgHZdY" controls={true}  playing={play}/>
+                            <ReactPlayer width={"100%"} height={"100%"} url="https://www.youtube.com/watch?v=8NVjTKgHZdY" controls={true}/>
                         </motion.div>
                     }
                 </AnimatePresence>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, forwardRef, useImperativeHandle} from 'react'
+import React, { forwardRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
 import Div100vh from 'react-div-100vh';
 import {PortfolioData} from 'shared/PortfolioData.js';
@@ -50,25 +50,6 @@ const variants = {
   exit: { opacity: 0 },
 }
   
-const lineVariants = {
-    show: {
-      opacity: 1,
-      width: "100%",
-      transition: {
-        duration: .5,
-        ease: [0.83, 0, 0.17, 1]
-      }
-    },
-    hidden: {
-      opacity: 0,
-      width: 0,
-      transition: {
-        duration: .5,
-        ease: [0.83, 0, 0.17, 1]
-      }
-    }
-  }
-
   const Card = (params) => {
     var image = params.imagen;
     return(
@@ -87,7 +68,7 @@ const lineVariants = {
         <img src={avatar} alt='' className='h-full w-full object-fit relative'/>
         <div>
           <>
-            <Parallax speed={0} translateY={['0px', '100px']} easing="easeInQuad">
+            <Parallax speed={0} translateY={['-6px', '1000px']} easing="easeInQuint">
               <img src={amaury_title} alt='' className='absolute w-full bottom-0 md:hidden lg:flex'/> 
             </Parallax>
             <Parallax speed={0} translateY={['0px', '20px']} easing="easeInQuad">
@@ -95,7 +76,7 @@ const lineVariants = {
             </Parallax>
           </>
           <Parallax speed={0} opacity={[1.2,0]}>
-            <img src={valdivia_title} alt='' className='absolute h-fit w-full'/>
+            <img src={valdivia_title} alt='' className='absolute h-auto w-full'/>
           </Parallax>
         </div>
       </div>

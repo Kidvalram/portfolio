@@ -24,7 +24,7 @@ function Contact({language}) {
   return (
     <Div100vh>
       
-      <motion.div className='absolute bottom-0 w-full h-full xl:h-[90vh] md:h-[92vh] flex items-center justify-center'
+      <motion.div className='absolute bottom-0 w-full h-full xl:h-[90vh] md:h-[92vh] flex items-center justify-center overflow-hidden'
       variants={variants} initial="initial" animate="animate" exit="exit" >
         
         {/* Decoration Container */}
@@ -79,42 +79,44 @@ function Contact({language}) {
                 })}
               </AnimatePresence>
               
-              <div className='w-full grid grid-rows-1 place-items-center md:grid-cols-2 md:grid-rows-none lg:grid-rows-1 lg:grid-cols-none gap-[3vw] md:gap-[2vw] lg:gap-[2vh]'>
+              <form className='w-full flex flex-col gap-5' action="mailto:valram@domory.co" method="GET">
+              
+                <div className='w-full grid grid-rows-1 place-items-center md:grid-cols-2 md:grid-rows-none lg:grid-rows-1 lg:grid-cols-none gap-[3vw] md:gap-[2vw] lg:gap-[2vh]'>
 
-                {/* Name input */}
-                <AnimatePresence exitBeforeEnter initial={false}>
-                  {lang.map((data) => {
-                    return (
-                      language === data && 
-                      <motion.div className='relative w-full text-[2vw]' 
-                      variants={variants} initial="initial" exit="exit" animate="animate" key={language + "name"}
-                        transition={{opacity: { delay: .2, duration: .6 }, type: 'linear' }}>
-                        <input className="w-full bg-gray-100 rounded borde border-oxford_blue focus:border-marigold text-[3.8vw] md:text-[1.9vw] lg:text-[1.8vh] outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        type="text" id="name" name="name" placeholder={ContactData.names[language]}/>
-                      </motion.div>
-                    )
-                  })}
-                </AnimatePresence>
-                  
-                {/* Email input */}
-                <AnimatePresence exitBeforeEnter initial={false}>
-                  {lang.map((data) => {
-                    return (
-                      language === data && 
-                      <motion.div className='relative  w-full ' 
-                      variants={variants} initial="initial" exit="exit" animate="animate" key={language + "email"}
-                        transition={{opacity: { delay: .2, duration: .6 }, type: 'linear' }}>
-                        <input className="w-full bg-gray-100 rounded border border-oxford_blue focus:border-marigold text-[3.8vw] md:text-[1.9vw] lg:text-[1.8vh] outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                          type="text" id="email" name="email" placeholder={ContactData.email[language]}/>
-                      </motion.div>
-                    )
-                  })}
-                </AnimatePresence>
+                  {/* Name input */}
+                  {/* <AnimatePresence exitBeforeEnter initial={false}>
+                    {lang.map((data) => {
+                      return (
+                        language === data && 
+                        <motion.div className='relative w-full text-[2vw]' 
+                        variants={variants} initial="initial" exit="exit" animate="animate" key={language + "name"}
+                          transition={{opacity: { delay: .2, duration: .6 }, type: 'linear' }}>
+                          <input className="w-full bg-gray-100 rounded borde border-oxford_blue focus:border-marigold text-[3.8vw] md:text-[1.9vw] lg:text-[1.8vh] outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                          type="text" id="name" name="name" placeholder={ContactData.names[language]}/>
+                        </motion.div>
+                      )
+                    })}
+                  </AnimatePresence> */}
+                    
+                  {/* Email input */}
+                  <AnimatePresence exitBeforeEnter initial={false}>
+                    {lang.map((data) => {
+                      return (
+                        language === data && 
+                        <motion.div className='relative  w-full ' 
+                        variants={variants} initial="initial" exit="exit" animate="animate" key={language + "email"}
+                          transition={{opacity: { delay: .2, duration: .6 }, type: 'linear' }}>
+                          <input className="w-full bg-gray-100 rounded border border-oxford_blue focus:border-marigold text-[3.8vw] md:text-[1.9vw] lg:text-[1.8vh] outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                            type="text" id="subject" name="subject" placeholder={ContactData.subject[language]}/>
+                        </motion.div>
+                      )
+                    })}
+                  </AnimatePresence>
 
-              </div>
-             
-              {/* Message input */}
-              <AnimatePresence exitBeforeEnter initial={false}>
+                </div>
+
+                {/* Message input */}
+                <AnimatePresence exitBeforeEnter initial={false}>
                 {lang.map((data) => {
                   return (
                     language === data && 
@@ -122,28 +124,30 @@ function Contact({language}) {
                     exit="exit" animate="animate" key={language + "message"}
                     transition={{opacity: { delay: .2, duration: .6 }, type: 'linear' }}>
                       <textarea className="w-full text-[3.8vw] md:text-[1.9vw] lg:text-[1.8vh] bg-gray-100 rounded border border-oxford_blue focus:border-marigold h-[20vw] md:h-[12vh] lg:h-[20vh] xl:h-[22vh] 2xl:h-[25vh] outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                      type="text" id="message" name="message" placeholder={ContactData.message[language]}/>
+                      type="text" id="body" name="body" placeholder={ContactData.message[language]}/>
                     </motion.div>
                   )
                 })}
-              </AnimatePresence>
-              
-              {/* Send button */}
-              <AnimatePresence exitBeforeEnter initial={false}>
+                </AnimatePresence>
+
+                {/* Send button */}
+                <AnimatePresence exitBeforeEnter initial={false}>
                 {lang.map((data) => {
                   return (
                     language === data && 
                     <motion.div className='relative w-full' variants={variants} initial="initial" 
                     exit="exit" animate="animate" key={language + "button"}
                     transition={{opacity: { delay: .2, duration: .6 }, type: 'linear' }}>
-                      <button type="button" className="flex mx-auto text-white bg-marigold border-0 py-2 px-8 focus:outline-none active:bg-marigold_pressed rounded text-[3.8vw] md:text-[1.7vw] lg:text-[1.6vh] xl:text-[1.8vh]">
+                      <button type="submit" className="flex mx-auto text-white bg-marigold border-0 py-2 px-8 focus:outline-none active:bg-marigold_pressed rounded text-[3.8vw] md:text-[1.7vw] lg:text-[1.6vh] xl:text-[1.8vh]">
                         {ContactData.title_button[language]}
                       </button>
                     </motion.div>
                   )
                 })}
-              </AnimatePresence>
-              
+                </AnimatePresence>
+
+              </form>
+  
             </div>  
 
             <div className='font-roboto text-[3.8vw] md:text-[1.9vw] lg:text-[1.8vh] xl:text-[2vh] text-ivory p-[2vh]'>

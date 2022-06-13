@@ -41,19 +41,15 @@ export const Carousel = (props) => {
     const threshold = xOffset / 2;
  
     if (offset.x < -threshold) {
-      // If user is dragging left, go forward a page
       newPage = props.index + 1;
       props.onChange("next")
     } else if (offset.x > threshold) {
-      // Else if the user is dragging right,
-      // go backwards a page
+
       newPage = props.index - 1;
       props.onChange("preview")
     }
     if (newPage !== props.index) {
       hasPaginated.current = true;
-      // Wrap the page index to within the
-      // permitted page range
       newPage = wrap(0, props.images.length, newPage);
       setPage(newPage,offset.x < 0 ? 1 : -1);
     }
@@ -70,10 +66,6 @@ export const Carousel = (props) => {
 
       <div className="slider-container">
         <AnimatePresence
-          // This will be used for components to resolve
-          // exit variants. It's necessary as removed
-          // components won't rerender with
-          // the latest state (as they've been removed)
           custom={direction}>
           <motion.img
             key={props.index + props.images[props.index].image.string}
@@ -88,11 +80,7 @@ export const Carousel = (props) => {
             onDrag={detectPaginationGesture}
             onDragStart={() => (hasPaginated.current = false)}
             onDragEnd={() => (hasPaginated.current = true)}
-            // Snap the component back to the center
-            // if it hasn't paginated
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-            // This will be used for components to resolve all
-            // other variants, in this case initial and animate.
             custom={direction}
           />
         </AnimatePresence>

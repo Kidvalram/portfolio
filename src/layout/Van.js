@@ -1,9 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import React, { useState } from 'react'
+import React from 'react'
 import Div100vh from 'react-div-100vh'
 import {PortfolioData} from 'shared/PortfolioData.js';
 import {OpacityVariant} from 'shared/AnimationData.js';
-import ReactPlayer from "react-player";
 
 import background_image_lg from 'assets/images/van_image_background_lg.jpg'
 import background_image_md from 'assets/images/van_image_background_md.jpg'
@@ -28,7 +27,6 @@ import project_decoration_bottom_left_lg from 'assets/images/project_decoration_
 export default function Van({setTransition, language, onClickLanguage}) {
 
     const lang = ["fr", "es", "en"];
-    const [play, setPlay] = useState(false)
 
     return (
     <Div100vh>
@@ -55,7 +53,7 @@ export default function Van({setTransition, language, onClickLanguage}) {
 
             </div>
 
-            <div className='relative flex flex-col items-center justify-evenly h-[75vh] lg:h-full lg:w-[75vw] 2xl:w-[70vw]'>
+            <div className='relative flex flex-col items-center justify-evenly h-[70vh] lg:h-full lg:w-[75vw] 2xl:w-[70vw]'>
 
                 <div className='absolute w-full h-full'>
                     <img src={project_decoration_top_left_lg} className='absolute lg:top-0 left-0 top-0 w-[10vw] md:w-[8vw] md:top-[-1vw] lg:w-[4.5vw] xl:w-[4vw] 2xl:w-[4vw] h-auto ' alt='About decoration'/>
@@ -71,7 +69,7 @@ export default function Van({setTransition, language, onClickLanguage}) {
                         {
                             lang.map((data) => {
                                 return(
-                                    language == data &&
+                                    language === data &&
                                     <motion.div className='flex justify-start items-start text-left md:justify-center md:text-center md:items-center pt-[2vh] w-full md:pt-0 md:w-[35%] lg:w-[40%]'
                                     variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                     transition={{duration: .8}}>
@@ -90,7 +88,7 @@ export default function Van({setTransition, language, onClickLanguage}) {
                             {
                                 lang.map((data) => {
                                     return(
-                                        language == data &&
+                                        language === data &&
                                         <motion.span className='text-rich_black text-sm md:text-xl lg:text-lg xl:text-lg 2xl:text-lg'
                                         variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                         transition={{duration: .6, delay: .2}}>{PortfolioData.category.projects[2].description[language]}
@@ -106,12 +104,13 @@ export default function Van({setTransition, language, onClickLanguage}) {
                             {
                                 lang.map((data) => {
                                     return(
-                                        language == data &&
+                                        language === data &&
                                         
                                         <motion.div className='text-ivory text-sm lg:text-lg xl:text-md 2xl:text-md'
                                         variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                         transition={{duration: .6, delay: .2}}>
-                                        <button type="button" className="focus:outline-none drop-shadow-lg bg-marigold active:bg-marigold_pressed rounded-lg px-5 py-2.5 mr-2 mb-2 ">
+                                        <button type="button" className="focus:outline-none drop-shadow-lg bg-marigold active:bg-marigold_pressed rounded-lg px-5 py-2.5 mr-2 mb-2 "
+                                        onClick={() => window.open("https://vanliberte.fr/accueil")}>
                                             { PortfolioData.button.check[language] }
                                         </button>
                                     </motion.div>

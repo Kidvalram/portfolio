@@ -12,13 +12,13 @@ export const AboutData = {
         },
         description: {
             fr: <>
-                    {'Je suis une personne qui aime les défis, qu’ils soient individuels ou en équipe, qui pense que tout est dans la tête, concentré et patiemment peut atteindre des objectifs.'}
+                    {'Je suis une personne qui aime les défis, qu’ils soient individuels ou en équipe. Je pense que le mental est important, que l’on peut atteindre tous nos objectifs en restant patients et concentrés.'}
                     <br/>
                     <br/>
-                    {'Laissant une vie au Mexique où j’étudie l’Ingéniérie électronique, Je vis maintenant en France depuis deux ans en me concentrant sur le développement d’Apps et de Sites Web.'}
+                    {'Laissant une vie au Mexique où j’ai tout d’abord étudié l’ingéniérie électronique, je vis maintenant en France depuis plus de deux ans en me concentrant sur le développement d’applications et de sites web.'}
                     <br/>
                     <br/>
-                    {'Naturellement curieuse, je prends une partie de la journée à apprendre quelque chose sur le logiciel et UX Design et toujours j’essaie d’améliorer mes compétences professionnelles.'}
+                    {'Naturellement curieux, j’essaie constamment d’améliorer mes compétences professionnelles. Je prends par exemple chaque jour un temps pour m’améliorer en développement ou en UX Design.'}
                 </>,
             es: <>
                     {'Soy una persona a la cual le gustan los retos, ya sean individuales o en equipo, que piensa que todo limite esta en la cabeza, concentrandose y con paciencia se pueden lograr metas.'} 
@@ -42,21 +42,21 @@ export const AboutData = {
     },
     hobbits: {
         title_button: {
-            fr: "Hobbies",
+            fr: "Loisirs",
             es: "Hobbies",
             en: "Hobbies"
         },
         title: {
-            fr: "Hobbies",
+            fr: "Loisirs",
             es: "Hobbies",
             en: "Hobbies"
         },
         description: {
             fr: <>
-                    {'Pour travailler sur l’ordinateur, vous avez besoin d’un esprit sain pour être en mesure de se concentrer, je pratique la méditation 20 minutes par jour en plus de courir à l’extérieur, prenant un moment dans la journée pour lire 30 minutes.'}
+                    {'Pour tout travail, je pense qu’il faut travailler sur sa concentration. Pour avoir un esprit sain, de mon côté je pratique la méditation tous les jours, après avoir fait du sport le matin pour bien commencer la journée. Je prends aussi un moment en fin de journée pour lire.'}
                     <br/>
                     <br/>
-                    {'J’aime rencontrer de nouvelles personnes et trouver d’autres points de vue sur la vie et le travail, il est important de prendre le temps de socialiser et un temps de qualité dans la solitude aussi.'}
+                    {'J’aime rencontrer de nouvelles personnes et confrontter nos points de vue sur la vie personnelle et professionnelle. Je trouve important de garder une balance entre des temps pour socialiser et des temps de qualité dans la solitude aussi.'}
                 </>,
             es: <>
                     {'Para trabajar programando en la computadora, es necesaria una mente sana para poder concentrarse, practico meditacion 20 minutos al dia ademas de correr al aire libre, tomando un momento al dia para leer 30 minutos.'}

@@ -1,6 +1,6 @@
 import Main from 'layout/Main'
 import Projects from 'layout/Projects'
-import React, {useRef, useState} from 'react'
+import React, { useRef } from 'react'
 import { motion } from 'framer-motion';
 import { animateScroll as scroll } from 'react-scroll'
 
