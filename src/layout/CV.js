@@ -4,6 +4,8 @@ import {CVData} from 'shared/CVData.js';
 import { motion, AnimatePresence } from 'framer-motion';
 import {OpacityVariant} from 'shared/AnimationData.js';
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import cv_decoration_right_top_lg from 'assets/images/cv_decoration_right_top_lg.png'
 import cv_decoration_middle_left_lg from 'assets/images/cv_decoration_middle_left_lg.png'
