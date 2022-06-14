@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(./assets/fonts/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Trirong';
+    src: url(./assets/fonts/trirong/Trirong-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: 'Playfair';
+    src: url(./assets/fonts/playfair_display/PlayfairDisplay-Bold.ttf);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background-color: "#FEFFEE";
+}

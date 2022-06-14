@@ -27,7 +27,7 @@ module.exports = {
       boxShadow: {
         'right': '5px 0 5px -5px rgba(138,136,137,0.72)',
         'left' : '-5px 0 5px -5px rgba(138,136,137,0.72)',
-        'top' : 'rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;',
+        'top' : 'rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px',
         'bottom' : 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px',
         'inner-cards' : '25px 0px 15px -25px rgba(0,0,0,0.45) inset , -25px 0px 15px -25px rgba(0,0,0,0.45) inset',
         'inner-container' : 'rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px 1px 1px 1px inset',
