@@ -212,7 +212,7 @@ export default function Menu({setTransition, language, onClickLanguage}) {
                                         variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                         transition={{duration: .6, delay: .2}}>
                                         <button type="button" className="focus:outline-none drop-shadow-lg bg-marigold active:bg-marigold_pressed rounded-lg px-5 py-2.5 mr-2 mb-2 "
-                                        onClick={() => window.open("https://menuapp-domory.vercel.app/")}>
+                                        onClick={() => window.open("https://menuapp-domory.vercel.app/", "_blank")}>
                                             { PortfolioData.button.check[language] }
                                         </button>
                                     </motion.div>

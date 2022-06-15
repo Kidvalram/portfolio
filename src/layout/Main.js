@@ -287,7 +287,8 @@ const Main = forwardRef((props, ref) => {
                               props.language === data && 
                               <motion.span className='font-roboto text-ivory text-[3.5vw]' key={props.language + "button_sm"} variants={variants}
                               initial="initial" exit="exit" animate="animate" transition={{opacity: { delay: .2, duration: .4 }, type: 'linear' }}>
-                              <button type="button" className=" bg-marigold flex justify-center items-center shadow-md shadow-drop active:bg-marigold_pressed  rounded-lg px-3 py-2.5 mr-2 mb-2">
+                              <button type="button" className=" bg-marigold flex justify-center items-center shadow-md shadow-drop active:bg-marigold_pressed  rounded-lg px-3 py-2.5 mr-2 mb-2"
+                              onClick={() => window.open("https://drive.google.com/file/d/1bBV8ycpN_-ZJiZ0f5GzVBJv794Kk5XfV/view", "_blank")}>
                                 { PortfolioData.button.cv[props.language]}
                               </button>
                               </motion.span>

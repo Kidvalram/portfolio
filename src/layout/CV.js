@@ -254,7 +254,7 @@ export default function CV({language, setTransition, onClickLanguage}) {
                             }
                             
                         </AnimatePresence>
-                        <button>
+                        <button onClick={() => window.open("https://drive.google.com/file/d/1bBV8ycpN_-ZJiZ0f5GzVBJv794Kk5XfV/view", "_blank")}>
                             <img src={cv_icon} alt={cv_icon} className="lg:w-[6vw] xl:w-[4vw] 2xl:w-[4vw] h-auto object-cover"/>
                         </button>
                     </div>

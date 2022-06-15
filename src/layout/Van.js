@@ -110,7 +110,7 @@ export default function Van({setTransition, language, onClickLanguage}) {
                                         variants={OpacityVariant} initial="initial" animate="animate" exit="exit" key={language + "title"}
                                         transition={{duration: .6, delay: .2}}>
                                         <button type="button" className="focus:outline-none drop-shadow-lg bg-marigold active:bg-marigold_pressed rounded-lg px-5 py-2.5 mr-2 mb-2 "
-                                        onClick={() => window.open("https://vanliberte.fr/accueil")}>
+                                        onClick={() => window.open("https://vanliberte.fr/accueil", "_blank")}>
                                             { PortfolioData.button.check[language] }
                                         </button>
                                     </motion.div>
