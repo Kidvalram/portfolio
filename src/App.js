@@ -11,6 +11,7 @@ import Menu from "layout/Menu";
 import Coinrek from "layout/Coinrek";
 import Van from "layout/Van";
 import CV from "layout/CV";
+import Div100vh from "react-div-100vh";
 
 function App() {
 
@@ -41,7 +42,7 @@ function App() {
   }, [size])
 
   return (
-    <div className="bg-ivory">
+    <Div100vh className="bg-ivory">
       <ParallaxProvider>
         <Router>
           
@@ -81,7 +82,7 @@ function App() {
         </Router>
        
       </ParallaxProvider>
-    </div>
+    </Div100vh>
   )
   
 }
