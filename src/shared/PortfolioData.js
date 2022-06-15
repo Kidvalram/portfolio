@@ -55,7 +55,7 @@ export const PortfolioData = {
     },
     job: {
         fr: <>{'Développeur UX'} <br/>et<br/> {'Ingénieur Électronique'}</>,
-        es: <>{'Desarrollador UX'} <br/>y<br/> {'Ingeniero Electronico'}</>,
+        es: <>{'Desarrollador UX'} <br/>e<br/> {'Ingeniero Electronico'}</>,
         en: <> {'UX Developer'}<br/>&<br/> {'Electronic Engineer'}</>,
     },
     category: {
