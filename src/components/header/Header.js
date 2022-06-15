@@ -125,7 +125,7 @@ export default function Header({onClickLanguage, onClickMenu, language, open}) {
                 }
               </AnimatePresence>
             </button>
-            <button>
+            <button onClick={() => window.open("https://www.linkedin.com/in/kidvalram/","_blank")}>
               <img src={linkedin_icon} className="relative w-[11vw] h-auto md:w-[4vw] lg:h-[4vh] lg:w-[4vh] " alt="Linked in icon" />
             </button>
           </div>

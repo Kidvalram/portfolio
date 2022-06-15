@@ -75,8 +75,12 @@ export default function Tab({onClickMenu, ilanguage}) {
                     <img src={background_image} className='relative h-full w-full object-cover' alt="Background"/>
                     <div className='absolute flex flex-col items-center justify-center h-full w-[53%] left-0 top-0'>
                         <div className='flex flex-col justify-between items-end h-[20vh] w-full'>
-                            <img src={email_icon} className="w-[10vw] h-auto mr-[6vw]" alt="Linked in icon" />
-                            <img src={linkedin_icon} className="relative w-[9.5vw] h-auto mr-[6vw]" alt="Linked in icon" />
+                            <NavLink to="/contact" onClick={click}>
+                                <img src={email_icon} className="w-[10vw] h-auto mr-[6vw]" alt="Linked in icon" />
+                            </NavLink>
+                            <button onClick={() => window.open("https://www.linkedin.com/in/kidvalram/","_blank")}>
+                                <img src={linkedin_icon} className="relative w-[9.5vw] h-auto mr-[6vw]" alt="Linked in icon" />
+                            </button>
                         </div>
                     </div>
                 </div>
