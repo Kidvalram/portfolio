@@ -6,10 +6,9 @@ Site web créé avec React
 
  Topics
 - React 
-- Material-UI
+- Tailwind
 - Framer-motion
 - Figma
-- Wireframes
 - Prototype
 - Mockup
 
