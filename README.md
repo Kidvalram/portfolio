@@ -2,7 +2,7 @@
 
 Site web créé avec React
 
-<img src="https://www.kidvalram.com/static/media/menu_mockup_2_lg.0b4d05e745e477c3b53f.jpg" width="50%" height="50%">
+<img src="https://github.com/Kidvalram/portfolio/blob/main/src/assets/images/portfolio_mockup.jpg" width="50%" height="50%">
 
  Topics
 - React 
