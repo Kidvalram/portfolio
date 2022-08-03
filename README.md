@@ -15,4 +15,4 @@ Site web créé avec React
 ## Links
 
 - Website : [www.kidvalram.com](https://www.kidvalram.com)
-- Conception sur Figma : [Design](https://www.figma.com/file/YBlJrd83tWdRpegMHCakGp/Amaury's-Portfolio?node-id=0%3A1)
+- Conception sur Figma : [Design](https://www.figma.com/file/YBlJrd83tWdRpegMHCakGp/Amaury's-Portfolio?node-id=2%3A6)
